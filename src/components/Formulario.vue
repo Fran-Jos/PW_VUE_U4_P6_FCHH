@@ -1,39 +1,66 @@
 <template>
-<div class="container">
-<p class="form-title">Formulario Estudiante</p>
-
-  <div class="form-group">
-    <label for="nombre">Nombre</label>
-    <input type="text" class="form-control" id="nombre" >
-  </div>
-
-  <div class="form-group">
-    <label for="apellido">Apellido</label>
-    <input type="text" class="form-control" id="apellido">
-  </div>
-
-  <div class="form-group">
-    <label for="fecha">Fecha nacimiento</label>
-    <input type="date" class="form-control" id="fecha" >
-  </div>
-
-  <div class="form-group">
-    <label for="genero">Genero</label>
-    <input type="text" class="form-control" id="genero" >
-  </div>
+  <div class="container">
+    <p class="form-title">Formulario Estudiante</p>
 
     <div class="form-group">
-        <label for="cedula">Cedula</label>
-        <input type="text" class="form-control" id="cedula" >
+      <label for="nombre">Nombre</label>
+      <input type="text" class="form-control" id="nombre" />
     </div>
-  
-</div>
+
+    <div class="form-group">
+      <label for="apellido">Apellido</label>
+      <input type="text" class="form-control" id="apellido" />
+    </div>
+
+    <div class="form-group">
+      <label for="fecha">Fecha nacimiento</label>
+      <input type="date" class="form-control" id="fecha" />
+    </div>
+
+    <div class="form-group">
+      <label for="genero">Genero</label>
+      <input type="text" class="form-control" id="genero" />
+    </div>
+
+    <div class="form-group">
+      <label for="cedula">Cedula</label>
+      <input v-model="cedula" type="text" class="form-control" id="cedula" />
+    </div>
+
+    <button v-on:click="consultar">Consultar</button>
+    <button>Actualizar</button>
+  </div>
 </template>
 
 <script>
-export default {
+import {
+  obtenerPorCedulaFachada,
+  actualizarFachada,
+} from "../clients/ClienteEstudiante.js";
 
-}
+export default {
+  methods: {
+    async consultar() {
+      console.log(this.cedula);
+
+      const data = await obtenerPorCedulaFachada(this.cedula);
+      console.log(data);
+    },
+    actualizar() {
+      console.log("Actualizar");
+    },
+  },
+
+  data() {
+    return {
+      nombre: "",
+      apellido: "",
+      fecha: "",
+      genero: "",
+      cedula: null,
+    };
+  },
+};
 </script>
 
 <style>

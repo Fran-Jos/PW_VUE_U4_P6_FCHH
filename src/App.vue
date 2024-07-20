@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <p3/>
+    <p1/>
   </div>
 </template>
 

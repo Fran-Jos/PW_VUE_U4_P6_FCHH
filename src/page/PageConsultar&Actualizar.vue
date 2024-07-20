@@ -3,8 +3,8 @@
         <formulario/>
         
         <div class="botones">
-        <button >Consultar</button>
-        <button>Actualizar</button>
+
+
         </div>
 
 
