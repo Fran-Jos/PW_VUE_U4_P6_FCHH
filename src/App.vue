@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import p1 from './page/PageConsultar&Actualizar.vue'
+import p1 from './page/PageConsultarActualizar.vue'
 import p2 from './page/PageEliminar.vue'
 import p3 from './page/PageGuardar.vue'
 
