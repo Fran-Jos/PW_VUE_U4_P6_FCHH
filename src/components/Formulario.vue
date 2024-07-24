@@ -63,7 +63,8 @@ export default {
 
       console.log(this.fecha);
       //'2023-05-11T18:00:00'
-      let fechafinal = this.fecha + "T09:10:00";
+      let fecha = new Date(this.fecha);
+      let fechafinal = fecha.toISOString().split("T")[0] + "T00:00:00";
 
       const bodyEstudiante = {
         nombre: this.nombre,

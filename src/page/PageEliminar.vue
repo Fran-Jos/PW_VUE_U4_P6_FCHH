@@ -3,12 +3,12 @@
 <p class="form-title">Formulario Estudiante</p>
 
   <div class="form-group">
-    <label for="cedula">Cedula</label>
-    <input type="text" class="form-control" id="cedula" >
+    <label for="cedula" >Cedula</label>
+    <input type="text" v-model="cedula" class="form-control" id="cedula" >
   </div>
 
           <div class="botones">
-        <button >eliminar</button>
+        <button @click="eliminar">eliminar</button>
         </div>
   
   </div>
@@ -17,7 +17,24 @@
 </template>
 
 <script>
+
+import {eliminarFachada} from "../clients/ClienteEstudiante.js";
 export default {
+
+  data() {
+    return {
+      cedula: null,
+    };
+  },
+
+  methods:{
+
+   async eliminar(){
+      console.log(this.cedula);
+      await eliminarFachada(this.cedula);
+    }
+  }
+
 
 }
 </script>
