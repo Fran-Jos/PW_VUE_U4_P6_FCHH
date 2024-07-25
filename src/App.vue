@@ -1,20 +1,15 @@
 <template>
   <div class="container">
-    <p3/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import p1 from './page/PageConsultarActualizar.vue'
-import p2 from './page/PageEliminar.vue'
-import p3 from './page/PageGuardar.vue'
 
 export default {
   name: 'App',
   components: {
-    p1,
-    p2,
-    p3
+   
   }
 }
 </script>
