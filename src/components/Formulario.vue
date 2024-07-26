@@ -38,6 +38,7 @@
 </template>
 
 <script>
+import { computed } from "vue";
 import {
   obtenerPorCedulaFachada,
   actualizarFachada,
@@ -88,13 +89,22 @@ export default {
       cedula: null,
     };
   },
+
+  computed: {},
+  created() {
+    console.log(this.$route);
+    console.log(this.$route.params.c);
+    if (this.$route.params.c !== "vacio") {
+      this.cedula = this.$route.params.c;
+      this.consultar();
+    }
+  },
 };
 </script>
 
-<style>
+<style >
 .container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0 auto;

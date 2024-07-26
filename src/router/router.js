@@ -4,10 +4,11 @@ import PageConsultarActualizar from "../page/PageConsultarActualizar.vue";
 import PageEliminar from "../page/PageEliminar.vue";
 import PageGuardar from "../page/PageGuardar.vue";
 import BienvenidaPage from "../page/BienvenidaPage.vue";
+import NoFound from "../page/NoFound.vue";
 
 const routes = [
     {
-        path: "/pageConsultarActualizar",
+        path: "/pageConsultarActualizar/:c",
         component:PageConsultarActualizar
     }
     ,
@@ -24,6 +25,10 @@ const routes = [
         //esta es la pagina principal
         path:"/",
         component:BienvenidaPage
+    },
+    {
+        path:"/:pathMatch(.*)*",
+        component:NoFound
     }
 
 ];
