@@ -96,7 +96,7 @@ export default {
     console.log(this.$route.params.c);
     if (this.$route.params.c !== "vacio") {
       this.cedula = this.$route.params.c;
-      this.consultar();
+      //this.consultar();
     }
   },
 };

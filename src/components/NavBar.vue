@@ -1,7 +1,7 @@
 <template>
   <div class="container">
 
-    <router-link to="/pageConsultarActualizar/vacio">ESTU ACTUALIZAR</router-link>
+    <router-link :to="{name:'pageConsultarActualizar', params:{id:'000000000'}, query:{edad:15,ciudad:'quito'}}">ESTU ACTUALIZAR</router-link>
     <router-link to="/pageEliminar">ESTU ELIMINAR</router-link>
     <router-link to="/pageGuardar">ESTU CREAR</router-link>
 
